@@ -1,3 +1,1 @@
 # com.willibraun-frontend
-
-hello.
