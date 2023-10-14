@@ -1,0 +1,7 @@
+{
+  "name": "wb_kursanmeldung",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

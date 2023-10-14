@@ -1,0 +1,38 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title> EINLOGGEN </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large" color="primary"> EINLOGGEN </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="ion-padding">
+    <ion-input
+      aria-label="username"
+      label="Benutzername"
+      labelPlacement="floating"
+      autofocus="true"
+      [errorText]="true"
+    ></ion-input>
+
+    <ion-input
+      aria-label="password"
+      label="Passwort"
+      labelPlacement="floating"
+      type="password"
+      autofocus="true"
+      [errorText]="true"
+    ></ion-input>
+
+    <ion-button expand="full" (click)="onLogin()"> EINLOGGEN </ion-button>
+
+    <ion-button expand="full" fill="clear" routerLink="/forgot-password">
+      Passwort vergessen?
+    </ion-button>
+  </div>
+</ion-content>
