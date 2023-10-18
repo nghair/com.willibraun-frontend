@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Form } from '@angular/forms';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -7,13 +7,16 @@ import { Form } from '@angular/forms';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-  // loginForm: Form;
+  loginForm = this.fb.group({
+    username: '',
+    password: '',
+  });
 
-  constructor() {}
+  constructor(private fb: FormBuilder) {}
 
   ngOnInit() {}
 
   onLogin(): void {
-    console.log('hello');
+    console.log(this.loginForm.value);
   }
 }
