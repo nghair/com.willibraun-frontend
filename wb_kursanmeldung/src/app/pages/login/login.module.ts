@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { LoginPageRoutingModule } from './login-routing.module';
 
 import { LoginPage } from './login.page';
-import { SharedModule } from '../shared/shared.module';
+import { SharedModule } from '../../shared/shared.module';
 
 @NgModule({
   imports: [LoginPageRoutingModule, SharedModule],

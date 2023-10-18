@@ -5,17 +5,17 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () =>
-      import('./client/client.module').then((m) => m.ClientPageModule),
+      import('./pages/client/client.module').then((m) => m.ClientPageModule),
   },
   {
     path: 'login',
     loadChildren: () =>
-      import('./login/login.module').then((m) => m.LoginPageModule),
+      import('./pages/login/login.module').then((m) => m.LoginPageModule),
   },
   {
     path: 'forgot-password',
     loadChildren: () =>
-      import('./forgot-password/forgot-password.module').then(
+      import('./pages/forgot-password/forgot-password.module').then(
         (m) => m.ForgotPasswordPageModule
       ),
   },
