@@ -66,10 +66,22 @@
   --ion-color-light-shade: #1e2023;
   --ion-color-light-tint: #383a3e;
 
-  /* CUSTOM */
+  /*
+   * CUSTOM
+   * -------------------------------------------
+   */
+
   --ion-font-family: Exo2, sans-serif;
 
-  /* remove green highlight color from input */
+  ion-title {
+    text-transform: uppercase;
+  }
+
+  /*
+   * Style Fixes
+   * -------------------------------------------
+   */
+
   .has-focus,
   .ion-valid {
     --highlight-color: var(--ion-color-primary);

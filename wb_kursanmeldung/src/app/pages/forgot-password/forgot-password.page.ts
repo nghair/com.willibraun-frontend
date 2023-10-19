@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-forgot-password',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./forgot-password.page.scss'],
 })
 export class ForgotPasswordPage implements OnInit {
+  email = this.fb.control('');
 
-  constructor() { }
+  /* todo: forgot password service. waiting for api and swagger */
+  constructor(private fb: FormBuilder) {}
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  sendForgotPasswordMail() {
+    console.log(this.email.value);
   }
-
 }
