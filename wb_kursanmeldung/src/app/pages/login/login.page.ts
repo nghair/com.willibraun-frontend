@@ -14,6 +14,7 @@ export class LoginPage implements OnInit {
     password: '',
   });
 
+  /* todo: validation */
   constructor(
     private fb: FormBuilder,
     private router: Router,

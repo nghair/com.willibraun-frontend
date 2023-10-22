@@ -9,6 +9,7 @@ import { FormBuilder } from '@angular/forms';
 export class ForgotPasswordPage implements OnInit {
   email = this.fb.control('');
 
+  /* todo: validation */
   /* todo: forgot password service. waiting for api and swagger */
   constructor(private fb: FormBuilder) {}
 
