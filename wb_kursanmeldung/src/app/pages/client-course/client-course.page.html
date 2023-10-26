@@ -1,0 +1,89 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>{{ mock.name }}</ion-title>
+    <!-- <ion-buttons slot="primary">
+      <ion-button>
+        <ion-icon slot="icon-only" name="ellipsis-horizontal"></ion-icon>
+      </ion-button>
+    </ion-buttons> -->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">{{ mock.name }}</ion-title>
+      <ion-buttons *ngIf="role === 'a'" slot="primary">
+        <ion-button id="action-sheet-trigger">
+          <ion-icon slot="icon-only" name="ellipsis-horizontal"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-action-sheet
+    trigger="action-sheet-trigger"
+    [buttons]="actionSheetButtons"
+  ></ion-action-sheet>
+
+  <div class="infos ion-padding">
+    <div class="info">
+      <ion-icon name="location-outline"></ion-icon>
+      <div>{{mock.location.name}}</div>
+    </div>
+    <div class="info">
+      <ion-icon name="person-outline"></ion-icon>
+      <div>{{mock.trainer.name}}</div>
+    </div>
+    <div class="info">
+      <ion-icon name="people-outline"></ion-icon>
+      <div>{{mock.participants.length}}/{{mock.maxParticipants}}</div>
+    </div>
+  </div>
+
+  <div class="ion-padding">
+    <h4>Teilnehmer</h4>
+    <ul>
+      <li *ngFor="let p of mock.participants">{{ getName(p) }}</li>
+    </ul>
+
+    <br />
+
+    <h4 *ngIf="role !== 'c'">
+      Warteliste
+      <ion-icon
+        [name]="'chevron-' + (waitCollapsed ? 'down' : 'up') + '-outline'"
+        (click)="waitCollapsed = !waitCollapsed"
+      ></ion-icon>
+    </h4>
+    <ul *ngIf="role !== 'c' && waitCollapsed === false">
+      <li *ngFor="let w of mock.waitlist">
+        {{w.firstName}} {{role !== 'c' ? w.lastName : w.lastName[0]+'.'}}
+      </li>
+    </ul>
+  </div>
+</ion-content>
+
+<ion-footer class="ion-no-border">
+  <ion-toolbar class="feet">
+    <div class="ion-padding">
+      <ion-button expand="full" *ngIf="!angemeldet" (click)="anmelden()">
+        ANMELDEN
+      </ion-button>
+
+      <div *ngIf="angemeldet" class="footer-btns">
+        <ion-button class="first" color="danger" (click)="abmelden()">
+          ABMELDEN
+        </ion-button>
+
+        <ion-button class="second">
+          <ion-icon
+            slot="icon-only"
+            name="calendar-outline"
+            size="large"
+          ></ion-icon>
+        </ion-button>
+      </div>
+    </div>
+  </ion-toolbar>
+</ion-footer>

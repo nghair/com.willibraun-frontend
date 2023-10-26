@@ -14,6 +14,20 @@ const routes: Routes = [
             (m) => m.ClientCoursesPageModule
           ),
       },
+      {
+        path: 'course',
+        loadChildren: () =>
+          import('../client-course/client-course.module').then(
+            (m) => m.ClientCoursePageModule
+          ),
+      },
+      {
+        path: 'course/:id',
+        loadChildren: () =>
+          import('../client-course/client-course.module').then(
+            (m) => m.ClientCoursePageModule
+          ),
+      },
       // {
       //   path: 'tab2',
       //   loadChildren: () =>
