@@ -4,14 +4,14 @@ import { ClientPage } from './client.page';
 
 const routes: Routes = [
   {
-    path: 'client',
+    path: 'c',
     component: ClientPage,
     children: [
       {
-        path: 'dashboard',
+        path: 'courses',
         loadChildren: () =>
-          import('../client-dashboard/client-dashboard.module').then(
-            (m) => m.ClientDashboardPageModule
+          import('../client-courses/client-courses.module').then(
+            (m) => m.ClientCoursesPageModule
           ),
       },
       // {
@@ -26,14 +26,14 @@ const routes: Routes = [
       // },
       {
         path: '',
-        redirectTo: '/client/dashboard',
+        redirectTo: '/c/courses',
         pathMatch: 'full',
       },
     ],
   },
   {
     path: '',
-    redirectTo: '/client/dashboard',
+    redirectTo: '/c/courses',
     pathMatch: 'full',
   },
 ];
